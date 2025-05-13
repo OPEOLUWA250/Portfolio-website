@@ -137,7 +137,7 @@ section{
 }
 
 .btn{
-    color: white;
+    color: #000016;
     background-color: #13FF00;
     font-size: 1em;
     font-weight: 600;
@@ -462,7 +462,7 @@ section{
 }
 
 .work .content .card .card-btn {
-     color: white;
+     color: #000016;
     background-color: #13FF00;
     font-size: 1em;
     font-weight: 600;
