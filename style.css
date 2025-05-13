@@ -360,6 +360,10 @@ section{
     background-color: #000016;
 }
 
+.services .title p span{
+    color: #13FF00;
+}
+
 .services .content{
     display: flex;
     justify-content: center;
