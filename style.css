@@ -249,6 +249,10 @@ section{
     margin-bottom: 20px;
 }
 
+.about .content .col-right .content-title span {
+    color: #13FF00;
+}
+
 .about .content .col-right .paragraph-text{
     font-size: 1em;
 }
@@ -358,6 +362,7 @@ section{
 
 .title p{
     font-size: 1em;
+    color: #FFFFFF;
     width: 80%;
     text-align: center;
 }
