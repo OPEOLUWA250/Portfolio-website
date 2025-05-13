@@ -350,7 +350,7 @@ section{
 }
 
 .skills .content .col-right .bar .php::before{
-    width: 65%;
+    width: 80%;
     background-color: #13FF00;
 }
 
@@ -415,15 +415,14 @@ section{
 }
 
 .services .content .card:hover{
-    background-color: #13FF00;
-    color: white;
+    background-color: #FFFFFF;
 }
 
 .services .content .card:hover .service-icon,
 .services .content .card:hover .info h3
 {
     transform: translateY(-10px);
-    color: white;
+    color: #000016;
 }
 
 /* Work */
@@ -501,6 +500,10 @@ section{
     flex-direction: column;
     box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
     border-radius: 10px;
+  }
+
+  .contact .content .row .card:hover {
+    background-color: #FFFFFF;
   }
   
   .contact .content .row .card .contact-icon{
