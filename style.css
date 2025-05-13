@@ -257,6 +257,10 @@ section{
     font-size: 1em;
 }
 
+.about .content .col-right .paragraph-text span {
+    color: #13FF00;
+}
+
 /* Skills Section */
 
 .skills{
@@ -276,6 +280,10 @@ section{
 .skills .content .col-left{
     position: relative;
     width: 46%;
+}
+
+.skills .content .col-left .paragraph-text span {
+    color: #13FF00;
 }
 
 .skills .content .col-left .content-title{
