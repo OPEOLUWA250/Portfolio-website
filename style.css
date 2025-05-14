@@ -162,6 +162,7 @@ section{
 
 .media-icons{
     margin-top: 50px;
+    text-align: center;
 }
 
 .media-icons a{
@@ -781,9 +782,31 @@ section{
     overflow-x: hidden;
 }
 
+    .main{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(Image/bg-2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.main .content {
+    text-align: center;
+    width: 100%;
+}
+
     .main .content h2 {
     text-align: center;
 }
+
+   .main .content h2 span {
+    text-align: center;
+} 
 
 .media-icons {
     text-align: center;
