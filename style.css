@@ -849,6 +849,20 @@ section{
     text-align: center;
 }
 
+.skills .content .col-left {
+    text-align: center;
+}
+
+.work .content .card {
+    text-align: center;
+}
+
+.work .content .card .card-btn {
+    width: 100%;
+}
+
+
+
 
 }
 
