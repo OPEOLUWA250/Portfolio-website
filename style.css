@@ -780,11 +780,9 @@ section{
     height: auto;
     overflow-x: hidden;
 }
- 
 
     .main .content h2 {
     text-align: center;
-    font-size: 1.5rem;
 }
 
 .media-icons {
@@ -794,7 +792,7 @@ section{
 
 .animated-text h3{
     color: #13FF00;
-    font-size: 3em;
+    font-size: 1em;
     text-align: center;
     font-weight: 700;
     line-height: 70px;
