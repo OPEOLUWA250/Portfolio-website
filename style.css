@@ -180,8 +180,12 @@ section{
 /* About */
 
 .about {
-    background-color: #000016;
+    background-color: black;
     color: #FFFFFF;
+}
+
+.about-btn {
+    width: 50%;
 }
 
 .title{
@@ -230,17 +234,19 @@ section{
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    /* for the period of no img */
+    text-align: center;
 }
 
-.about .content .col-left{
+/* .about .content .col-left{
     position: relative;
     width: 45%;
-}
+} */
 
-.about .content .col-right{
+/* .about .content .col-right{
     position: relative;
     width: 50%;
-}
+} */
 
 .about .content .col-left .img-card{
     position: relative;
@@ -833,6 +839,12 @@ section{
     color: #FFFFFF;
 }
 
+/* for the period of no img */
+.about-btn {
+    width: 100%;
+}
+
+
 .about .content .col-left .img-card img{
     position: absolute;
     top: -2rem;
@@ -868,6 +880,17 @@ section{
 .work .content .card .card-btn {
     width: 100%;
 }
+
+ .contact-form{
+    background: #13FF00;
+    max-width: 600px;
+    margin-top: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+  }
+
+
  
 
 .scrollToTop-btn{
