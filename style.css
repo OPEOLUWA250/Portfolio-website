@@ -79,6 +79,7 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  text-align: center;
 }
 
 .main .content {
@@ -141,7 +142,7 @@ section {
 }
 
 .btn {
-  color: #fff;
+  color: black;
   background-color: #24d0c6;
   font-size: 1em;
   width: 100%;
@@ -405,7 +406,7 @@ section {
 
 .services .content .card {
   background-color: #24d0c6;
-  color: #fff;
+  color: #000016;
   width: 340px;
   margin: 10px;
   padding: 25px;
@@ -418,12 +419,8 @@ section {
   transition: 0.3s linear;
 }
 
-.services .content .card:hover {
-  color: #0a1a2f;
-}
-
 .services .content .card .service-icon {
-  color: #fff;
+  color: #0a1a2f;
   font-size: 3rem;
   text-align: center;
   transition: 0.3s linear;
@@ -434,7 +431,7 @@ section {
 }
 
 .services .content .card .info h3 {
-  color: #fff;
+  color: #0a1a2f;
   font-size: 1.2rem;
   font-weight: 700;
   margin: 10px;
@@ -669,6 +666,11 @@ section {
   text-decoration: none;
 }
 
+.footer .media-icons {
+  margin-top: 0;
+  margin-left: 2rem;
+}
+
 @media (max-width: 1040px) {
   header {
     padding: 12px 20px;
@@ -738,6 +740,10 @@ section {
 
   section {
     padding: 80px 20px;
+  }
+
+  .main {
+    text-align: center;
   }
 
   .main .content h2 {
