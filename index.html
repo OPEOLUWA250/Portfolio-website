@@ -606,35 +606,13 @@
           ><i class="fab fa-github"></i
         ></a>
       </div>
-      <p>Copyright @2025 <a href="#">devopeoluwa</a>. All Rights Reserved.</p>
+      <p>
+        Copyright @<span id="year"></span> <a href="#">devopeoluwa</a>. All
+        Rights Reserved.
+      </p>
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({ offset: 0 });
-    </script>
-    <script>
-      const menuBtn = document.querySelector(".menu-btn");
-      const navigation = document.querySelector(".navigation");
-      const navigationItems = document.querySelector(".navigation a");
-
-      menuBtn.addEventListener("click", () => {
-        menuBtn.classList.toggle("active");
-        navigation.classList.toggle("active");
-      });
-
-      // Navigation Effects
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector("header");
-        header.classList.toggle("sticky", window.scrollY > 0);
-      });
-
-      navigationItems.forEach((navigationItem) => {
-        navigationItem.addEventListener("click", () => {
-          menuBtn.classList.remove("active");
-          navigation.classList.remove("active");
-        });
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
