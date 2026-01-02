@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+@layer components {
+  .btn {
+    @apply px-5 py-2.5 bg-accent text-primary font-semibold text-sm uppercase tracking-wider rounded transition-all duration-300 hover:bg-white hover:border-2 hover:border-primary hover:rounded-md;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold text-accent mb-12 relative inline-block;
+  }
+
+  .section-title::before {
+    @apply absolute w-36 h-1 bg-accent top-14 left-1/2 -translate-x-1/2;
+    content: "";
+  }
+
+  .section-title::after {
+    @apply absolute w-4 h-4 rounded-full bg-accent top-12 left-1/2 -translate-x-1/2;
+    content: "";
+  }
+
+  .media-icons {
+    @apply flex justify-center gap-8 mt-12;
+  }
+
+  .media-icons a {
+    @apply text-accent text-3xl transition-all duration-300 hover:text-white hover:text-4xl;
+  }
+}
+
+/* Custom animations */
+@keyframes text-move {
+  0%,
+  15% {
+    margin-top: 0px;
+  }
+  25%,
+  40% {
+    margin-top: -70px;
+  }
+  50%,
+  65% {
+    margin-top: -140px;
+  }
+  75%,
+  90% {
+    margin-top: -70px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+
+.animate-text {
+  animation: text-move 6s infinite ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1040px) {
+  header {
+    @apply px-5 py-3;
+  }
+
+  section {
+    @apply px-5 py-20;
+  }
+
+  .navigation.active {
+    @apply fixed top-0 right-0 w-96 h-screen bg-white z-50 flex flex-col justify-center items-center shadow-lg transition-all duration-300;
+  }
+
+  header .navigation a {
+    @apply text-primary text-lg m-2.5 p-2.5 rounded;
+  }
+
+  header .navigation a:hover {
+    @apply bg-accent text-primary;
+  }
+
+  .menu-btn {
+    @apply block relative w-10 h-10 cursor-pointer;
+  }
+
+  .menu-btn::before,
+  .menu-btn::after {
+    content: "";
+    @apply absolute w-full h-0.5 bg-white;
+  }
+
+  .menu-btn::before {
+    @apply top-0;
+  }
+
+  .menu-btn::after {
+    @apply bottom-0;
+  }
+
+  .menu-btn.active::before {
+    @apply top-2.5 rotate-45;
+  }
+
+  .menu-btn.active::after {
+    @apply bottom-2.5 -rotate-45;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    @apply px-5 py-12;
+  }
+
+  .section-title {
+    @apply text-2xl;
+  }
+}
