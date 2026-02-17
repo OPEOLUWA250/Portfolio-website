@@ -137,6 +137,25 @@ const Home = () => {
         .scale-in {
           animation: scaleIn 0.8s ease-out forwards;
         }
+        @media (max-width: 768px) {
+          #home > div {
+            align-items: center !important;
+            text-align: center !important;
+            paddingLeft: "clamp(8px, 3vw, 30px)" !important;
+            paddingRight: "clamp(8px, 3vw, 30px)" !important;
+          }
+          #home h1 {
+            align-items: center !important;
+            text-align: center !important;
+          }
+          #home > div > div:nth-of-type(1) {
+            align-items: center !important;
+            justify-content: center !important;
+          }
+          #home > div > div:last-of-type {
+            justify-content: center !important;
+          }
+        }
         @media (min-width: 769px) {
           #home > div {
             align-items: flex-start !important;
@@ -166,7 +185,7 @@ const Home = () => {
         style={{
           maxWidth: "90rem",
           width: "100%",
-          paddingLeft: "clamp(40px, 8vw, 200px)",
+          paddingLeft: "clamp(8px, 3vw, 200px)",
           paddingRight: "clamp(8px, 3vw, 100px)",
           textAlign: "center",
           position: "relative",
