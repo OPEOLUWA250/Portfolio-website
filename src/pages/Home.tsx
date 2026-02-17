@@ -147,10 +147,15 @@ const Home = () => {
           #home h1 {
             align-items: center !important;
             text-align: center !important;
+            fontSize: "clamp(2rem, 6vw, 2.5rem)" !important;
+          }
+          #home h1 > span:first-child {
+            fontSize: "clamp(1.2rem, 4vw, 1.5rem)" !important;
           }
           #home > div > div:nth-of-type(1) {
             align-items: center !important;
             justify-content: center !important;
+            fontSize: "clamp(32px, 7vw, 48px)" !important;
           }
           #home > div > div:last-of-type {
             justify-content: center !important;
