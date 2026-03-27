@@ -302,7 +302,7 @@ const Home = () => {
             e.currentTarget.style.animation = "none";
           }}
         >
-          SEE MY WORK
+          VIEW MY WORK
         </button>
 
         {/* Social Icons */}
