@@ -190,7 +190,7 @@ const Home = () => {
         style={{
           maxWidth: "90rem",
           width: "100%",
-          paddingLeft: "clamp(8px, 3vw, 200px)",
+          paddingLeft: "clamp(80px, 3vw, 200px)",
           paddingRight: "clamp(8px, 3vw, 100px)",
           textAlign: "center",
           position: "relative",
@@ -302,7 +302,7 @@ const Home = () => {
             e.currentTarget.style.animation = "none";
           }}
         >
-          VIEW MY WORK
+          SEE MY WORK
         </button>
 
         {/* Social Icons */}
