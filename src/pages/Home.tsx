@@ -190,8 +190,8 @@ const Home = () => {
         style={{
           maxWidth: "90rem",
           width: "100%",
-          paddingLeft: "clamp(80px, 3vw, 200px)",
-          paddingRight: "clamp(8px, 3vw, 100px)",
+          paddingLeft: "clamp(16px, 5vw, 200px)",
+          paddingRight: "clamp(16px, 5vw, 100px)",
           textAlign: "center",
           position: "relative",
           zIndex: 10,
