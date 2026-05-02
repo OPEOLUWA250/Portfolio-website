@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -11,6 +13,46 @@ const Header = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    let hideTimer: NodeJS.Timeout;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY === 0) {
+        // At the top, always show navbar
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY.current) {
+        // Scrolling down - hide navbar
+        setIsVisible(false);
+      } else {
+        // Scrolling up - show navbar
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+
+      // Clear any existing timer
+      if (hideTimer) clearTimeout(hideTimer);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    // Prevent scrolling when mobile menu is open
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
   const navItems = ["Home", "About", "Skills", "Services", "Work", "Contact"];
 
@@ -48,6 +90,8 @@ const Header = () => {
           zIndex: 50,
           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
           boxSizing: "border-box",
+          transform: isVisible ? "translateY(0)" : "translateY(-100%)",
+          transition: "transform 0.3s ease-in-out",
         }}
       >
         <nav
@@ -120,12 +164,27 @@ const Header = () => {
               viewBox="0 0 24 24"
               style={{ width: "24px", height: "24px" }}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+              {isOpen ? (
+                // X icon
+                <>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </>
+              ) : (
+                // Hamburger icon
+                <>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </>
+              )}
             </svg>
           </button>
         </nav>
