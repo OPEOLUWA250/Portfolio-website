@@ -15,7 +15,7 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    let hideTimer: NodeJS.Timeout;
+    let hideTimer: ReturnType<typeof setTimeout> | null = null;
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
