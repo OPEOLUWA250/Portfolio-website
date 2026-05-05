@@ -2,38 +2,56 @@ const Work = () => {
   const projects = [
     {
       title: "Uncover Your Essence",
+      description:
+        "A personal brand website showcasing holistic wellness services and transformational coaching.",
       image: "/Image/work/UYE-website.jpg",
       link: "http://uncoveryouressence.com/",
+      github: null,
       tech: "Wix, Web Design",
     },
     {
       title: "Sparrow Hair Studio",
+      description:
+        "Professional salon website featuring services, portfolio, and online booking capabilities.",
       image: "/Image/work/Sparrow-Hair.jpg",
       link: "http://sparrowhairstudio.com/",
+      github: null,
       tech: "Wix, Web Design",
     },
     {
       title: "Keonte Beals",
+      description:
+        "Personal portfolio website for a content creator and entrepreneur with dynamic navigation and project showcase.",
       image: "/Image/work/Beals.jpg",
       link: "https://www.keontebeals.com/",
+      github: "https://github.com/opeoluwa250/KeonteBeals",
       tech: "React, Tailwind CSS",
     },
     {
       title: "Hiitach",
+      description:
+        "High-intensity interval training application with workout tracking and exercise management features.",
       image: "/Image/work/Hiitach.jpg",
       link: "https://opeoluwa250.github.io/Hiitach/",
+      github: "https://github.com/opeoluwa250/Hiitach",
       tech: "React, JavaScript",
     },
     {
       title: "Tin Dog",
+      description:
+        "Fun and interactive pet adoption website with modern design and responsive layout.",
       image: "/Image/work/Tin-Dog.jpg",
       link: "https://opeoluwa250.github.io/Tin-dog/",
+      github: "https://github.com/opeoluwa250/Tin-dog",
       tech: "HTML, CSS, JavaScript",
     },
     {
       title: "Railsware",
+      description:
+        "Professional contact form page with elegant design and form validation capabilities.",
       image: "/Image/work/Railsware.jpg",
       link: "https://opeoluwa250.github.io/Railsware-contact-page/",
+      github: "https://github.com/opeoluwa250/Railsware-contact-page",
       tech: "HTML, CSS, JavaScript",
     },
   ];
@@ -128,38 +146,96 @@ const Work = () => {
                     {project.title}
                   </h3>
                   <p
-                    className="text-xs sm:text-sm text-light"
+                    className="text-xs sm:text-sm"
                     style={{
-                      color: "rgba(255, 255, 255, 0.8)",
+                      color: "rgba(255, 255, 255, 0.9)",
                       marginBottom: "12px",
                       flex: 1,
+                      lineHeight: "1.4",
+                    }}
+                  >
+                    {project.description}
+                  </p>
+                  <p
+                    className="text-xs sm:text-sm text-light"
+                    style={{
+                      color: "rgba(36, 208, 198, 0.8)",
+                      marginBottom: "12px",
+                      fontWeight: "500",
                     }}
                   >
                     {project.tech}
                   </p>
-                  <button
+                  <div
                     style={{
-                      padding: "8px 16px",
-                      backgroundColor: "#24D0C6",
-                      color: "#000000",
-                      fontWeight: "700",
-                      border: "none",
-                      borderRadius: "4px",
-                      cursor: "pointer",
-                      fontSize: "clamp(12px, 2vw, 14px)",
-                      transition: "all 0.3s",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = "#ffffff";
-                      e.currentTarget.style.transform = "scale(1.05)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = "#24D0C6";
-                      e.currentTarget.style.transform = "scale(1)";
+                      display: "flex",
+                      gap: "10px",
+                      flexWrap: "wrap",
                     }}
                   >
-                    View Project
-                  </button>
+                    <button
+                      style={{
+                        padding: "8px 16px",
+                        backgroundColor: "#24D0C6",
+                        color: "#000000",
+                        fontWeight: "700",
+                        border: "none",
+                        borderRadius: "4px",
+                        cursor: "pointer",
+                        fontSize: "clamp(11px, 2vw, 13px)",
+                        transition: "all 0.3s",
+                        flex: 1,
+                        minWidth: "100px",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = "#ffffff";
+                        e.currentTarget.style.transform = "scale(1.05)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = "#24D0C6";
+                        e.currentTarget.style.transform = "scale(1)";
+                      }}
+                    >
+                      View Project
+                    </button>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        style={{ textDecoration: "none" }}
+                      >
+                        <button
+                          style={{
+                            padding: "8px 16px",
+                            backgroundColor: "rgba(36, 208, 198, 0.2)",
+                            color: "#24D0C6",
+                            fontWeight: "700",
+                            border: "1px solid #24D0C6",
+                            borderRadius: "4px",
+                            cursor: "pointer",
+                            fontSize: "clamp(11px, 2vw, 13px)",
+                            transition: "all 0.3s",
+                            minWidth: "100px",
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = "#24D0C6";
+                            e.currentTarget.style.color = "#000000";
+                            e.currentTarget.style.transform = "scale(1.05)";
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor =
+                              "rgba(36, 208, 198, 0.2)";
+                            e.currentTarget.style.color = "#24D0C6";
+                            e.currentTarget.style.transform = "scale(1)";
+                          }}
+                        >
+                          GitHub
+                        </button>
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </a>
