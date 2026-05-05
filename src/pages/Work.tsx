@@ -123,10 +123,13 @@ const Work = () => {
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     width: "100%",
                     height: "clamp(150px, 40vw, 200px)",
                     objectFit: "cover",
+                    backgroundColor: "rgba(36, 208, 198, 0.1)",
                   }}
                 />
 
