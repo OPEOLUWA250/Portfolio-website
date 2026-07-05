@@ -1,58 +1,49 @@
 const Work = () => {
   const projects = [
     {
-      title: "Uncover Your Essence",
+      title: "CampusGuide",
       description:
-        "A personal brand website showcasing holistic wellness services and transformational coaching.",
-      image: "/Image/work/UYE-website.jpg",
-      link: "http://uncoveryouressence.com/",
-      github: null,
-      tech: "Wix, Web Design",
+        "Simplifies campus navigation across 30+ Nigerian universities with real-time maps, building search, location sharing, and OpenStreetMap integration.",
+      image: "/Image/work/campusguide.png",
+      link: "https://campusguide.tech/",
+      github: "https://github.com/OPEOLUWA250/Campus-Guide/tree/main",
+      tech: "Next.Js, Typescript",
     },
     {
-      title: "Sparrow Hair Studio",
+      title: "Systome",
       description:
-        "Professional salon website featuring services, portfolio, and online booking capabilities.",
-      image: "/Image/work/Sparrow-Hair.jpg",
-      link: "http://sparrowhairstudio.com/",
-      github: null,
-      tech: "Wix, Web Design",
+        "Turns chaotic manual workflows into seamless digital systems with operational clarity, structured workflows, and intelligent automations for scalable businesses.",
+      image: "/Image/work/systome.png",
+      link: "https://systome-co.vercel.app/",
+      github: "https://github.com/OPEOLUWA250/systome.co",
+      tech: "Next.Js, Typescript",
     },
     {
-      title: "Keonte Beals",
+      title: "Ecoclimate Foundation",
       description:
-        "Personal portfolio website for a content creator and entrepreneur with dynamic navigation and project showcase.",
-      image: "/Image/work/Beals.jpg",
-      link: "https://www.keontebeals.com/",
-      github: "https://github.com/opeoluwa250/KeonteBeals",
-      tech: "React, Tailwind CSS",
+        "A Nigerian environmental organization driving climate change mitigation through reforestation, waste management, and community education.",
+      image: "/Image/work/ecoclimate.png",
+      link: "https://ecoclimatefoundation.org/",
+      github: "https://github.com/OPEOLUWA250/ecoclimate-foundation",
+      tech: "React, Typescript",
     },
     {
-      title: "Hiitach",
+      title: "MarketSpot Agency",
       description:
-        "High-intensity interval training application with workout tracking and exercise management features.",
-      image: "/Image/work/Hiitach.jpg",
-      link: "https://opeoluwa250.github.io/Hiitach/",
-      github: "https://github.com/opeoluwa250/Hiitach",
-      tech: "React, JavaScript",
+        " A performance-driven digital marketing agency that helps SMBs grow with SEO, paid ads, and search-first websites, using a pay-on-performance model that ensures incentives are aligned",
+      image: "/Image/work/marketspot.png",
+      link: "https://www.marketspot.agency/",
+      github: "https://github.com/OPEOLUWA250/marketspot-agency",
+      tech: "Next.Js, Typescript",
     },
     {
-      title: "Tin Dog",
+      title: "Tabitha Books",
       description:
-        "Fun and interactive pet adoption website with modern design and responsive layout.",
-      image: "/Image/work/Tin-Dog.jpg",
-      link: "https://opeoluwa250.github.io/Tin-dog/",
-      github: "https://github.com/opeoluwa250/Tin-dog",
-      tech: "HTML, CSS, JavaScript",
-    },
-    {
-      title: "Railsware",
-      description:
-        "Professional contact form page with elegant design and form validation capabilities.",
-      image: "/Image/work/Railsware.jpg",
-      link: "https://opeoluwa250.github.io/Railsware-contact-page/",
-      github: "https://github.com/opeoluwa250/Railsware-contact-page",
-      tech: "HTML, CSS, JavaScript",
+        "A curated book discovery platform focused on mindful living, personal growth, and transformative storytelling.",
+      image: "/Image/work/tabitha.png",
+      link: "https://tabitha-books.vercel.app/",
+      github: "https://github.com/OPEOLUWA250/tabitha-books",
+      tech: "Next.Js, TypeScript",
     },
   ];
 
