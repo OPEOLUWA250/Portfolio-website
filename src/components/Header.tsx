@@ -15,8 +15,6 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    let hideTimer: ReturnType<typeof setTimeout> | null = null;
-
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
@@ -32,9 +30,6 @@ const Header = () => {
       }
 
       lastScrollY.current = currentScrollY;
-
-      // Clear any existing timer
-      if (hideTimer) clearTimeout(hideTimer);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -104,17 +99,15 @@ const Header = () => {
           }}
         >
           {/* Logo */}
-          <div
+          <img
+            src="/Image/logo-mark.png"
+            alt="DevOpe"
             style={{
-              fontSize: "clamp(18px, 5vw, 28px)",
-              fontWeight: "bold",
-              display: "flex",
-              gap: "0",
+              height: "clamp(24px, 5vw, 34px)",
+              width: "auto",
+              flexShrink: 0,
             }}
-          >
-            <span style={{ color: "#24D0C6" }}>DEV</span>
-            <span style={{ color: "#FFFFFF" }}>OPEOLUWA</span>
-          </div>
+          />
 
           {/* Desktop Navigation */}
           <div
@@ -128,13 +121,12 @@ const Header = () => {
               <button
                 key={item}
                 onClick={() => handleNavClick(item)}
+                className="text-sm md:text-base font-medium"
                 style={{
                   color: "#FFFFFF",
                   cursor: "pointer",
-                  fontWeight: "500",
                   border: "none",
                   backgroundColor: "transparent",
-                  fontSize: "clamp(13px, 2vw, 16px)",
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#24D0C6")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "#FFFFFF")}
@@ -212,6 +204,7 @@ const Header = () => {
                 <button
                   key={item}
                   onClick={() => handleNavClick(item)}
+                  className="text-base font-medium"
                   style={{
                     color: "#FFFFFF",
                     width: "100%",
@@ -220,8 +213,6 @@ const Header = () => {
                     border: "none",
                     padding: "8px 0",
                     cursor: "pointer",
-                    fontWeight: "500",
-                    fontSize: "16px",
                   }}
                   onMouseEnter={(e) =>
                     (e.currentTarget.style.color = "#24D0C6")

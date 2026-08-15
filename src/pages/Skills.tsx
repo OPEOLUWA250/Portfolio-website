@@ -11,126 +11,104 @@ import {
   SiGithub,
   SiShopify,
   SiFirebase,
+  SiPostgresql,
+  SiCloudflare,
 } from "react-icons/si";
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      name: "Frontend",
-      skills: [
-        { name: "React.js", icon: SiReact },
-        { name: "Next.js", icon: SiNextdotjs },
-        { name: "Javascript", icon: SiJavascript },
-        { name: "Typescript", icon: SiTypescript },
-        { name: "Tailwind CSS", icon: SiTailwindcss },
-      ],
-    },
-    {
-      name: "Backend & Databases",
-      skills: [
-        { name: "Supabase", icon: SiSupabase },
-        { name: "Appwrite", icon: SiAppwrite },
-        { name: "Firebase", icon: SiFirebase },
-      ],
-    },
-    {
-      name: "CMS & Website Builders",
-      skills: [
-        { name: "Wordpress", icon: SiWordpress },
-        { name: "Wix", icon: SiWix },
-        { name: "Shopify", icon: SiShopify },
-      ],
-    },
-    {
-      name: "Tools & Version Control",
-      skills: [{ name: "Git/GitHub", icon: SiGithub }],
-    },
+  const skills = [
+    { name: "React.js", icon: SiReact, color: "#61DAFB" },
+    { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+    { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+    { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+    { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
+    { name: "Supabase", icon: SiSupabase, color: "#3ECF8E" },
+    { name: "Appwrite", icon: SiAppwrite, color: "#FD366E" },
+    { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+    { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+    { name: "Wordpress", icon: SiWordpress, color: "#3499CD" },
+    { name: "Wix", icon: SiWix, color: "#4CC9C4" },
+    { name: "Shopify", icon: SiShopify, color: "#7AB55C" },
+    { name: "Git/GitHub", icon: SiGithub, color: "#FFFFFF" },
+    { name: "Cloudflare", icon: SiCloudflare, color: "#F38020" },
   ];
 
   return (
     <section
       id="skills"
-      className="min-h-screen bg-primary flex items-center justify-center scale-in"
-      style={{ paddingTop: "clamp(80px, 15vw, 140px)", paddingBottom: "40px" }}
+      className="flex items-center justify-center scale-in"
+      style={{
+        backgroundColor: "#0D2238",
+        paddingTop: "clamp(70px, 12vw, 100px)",
+        paddingBottom: "clamp(60px, 10vw, 90px)",
+        minHeight: "auto",
+      }}
     >
       <div
         className="max-w-5xl mx-auto px-6 w-full"
-        style={{
-          marginLeft: "clamp(10px, 3vw, 20px)",
-          marginRight: "clamp(10px, 3vw, 20px)",
-        }}
       >
         <h2
-          className="text-2xl sm:text-3xl md:text-4xl font-bold text-center"
+          className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-center"
           style={{ color: "#24D0C6", marginBottom: "clamp(24px, 5vw, 48px)" }}
         >
-          My Skills
+          Tech Stack
         </h2>
 
-        {skillCategories.map((category) => (
-          <div key={category.name} style={{ marginBottom: "48px" }}>
-            <h3
-              className="text-lg sm:text-xl md:text-2xl font-bold"
-              style={{
-                color: "#24D0C6",
-                marginBottom: "clamp(16px, 4vw, 24px)",
-                textAlign: "center",
-              }}
-            >
-              {category.name}
-            </h3>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns:
-                  "repeat(auto-fit, minmax(clamp(80px, 20vw, 120px), 1fr))",
-                gap: "clamp(12px, 3vw, 20px)",
-                justifyItems: "center",
-              }}
-            >
-              {category.skills.map((skill) => {
-                const Icon = skill.icon;
-                return (
-                  <div
-                    key={skill.name}
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      gap: "clamp(8px, 2vw, 12px)",
-                      padding: "clamp(12px, 3vw, 16px)",
-                      borderRadius: "8px",
-                      transition: "all 0.3s",
-                      cursor: "pointer",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "scale(1.1)";
-                      e.currentTarget.style.boxShadow =
-                        "0 0 20px rgba(36, 208, 198, 0.6)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "scale(1)";
-                      e.currentTarget.style.boxShadow = "none";
-                    }}
-                  >
-                    <Icon
-                      style={{
-                        fontSize: "clamp(32px, 8vw, 48px)",
-                        color: "#24D0C6",
-                      }}
-                    />
-                    <p
-                      className="text-xs sm:text-sm font-medium text-center"
-                      style={{ color: "#FFFFFF" }}
-                    >
-                      {skill.name}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        ))}
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: "clamp(10px, 2.5vw, 16px)",
+          }}
+        >
+          {skills.map((skill) => {
+            const Icon = skill.icon;
+            return (
+              <div
+                key={skill.name}
+                title={skill.name}
+                aria-label={skill.name}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "clamp(48px, 12vw, 64px)",
+                  height: "clamp(48px, 12vw, 64px)",
+                  borderRadius: "50%",
+                  backgroundColor: "rgba(255, 255, 255, 0.05)",
+                  border: "1px solid rgba(255, 255, 255, 0.08)",
+                  cursor: "pointer",
+                  transition: "all 0.3s",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "scale(1.12)";
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(36, 208, 198, 0.12)";
+                  e.currentTarget.style.borderColor =
+                    "rgba(36, 208, 198, 0.5)";
+                  e.currentTarget.style.boxShadow =
+                    "0 0 20px rgba(36, 208, 198, 0.4)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(255, 255, 255, 0.05)";
+                  e.currentTarget.style.borderColor =
+                    "rgba(255, 255, 255, 0.08)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <Icon
+                  style={{
+                    fontSize: "clamp(20px, 5vw, 26px)",
+                    color: skill.color,
+                  }}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

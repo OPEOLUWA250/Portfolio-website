@@ -1,9 +1,9 @@
-import { createClient } from "@supabase/supabase-js";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-let supabase: any = null;
+let supabase: SupabaseClient | null = null;
 
 // Only create client if credentials exist
 if (SUPABASE_URL && SUPABASE_ANON_KEY) {
@@ -53,8 +53,8 @@ export const messageOperations = {
     if (!supabase) {
       const messages = localStorage.getItem("messages");
       if (messages) {
-        const allMessages = JSON.parse(messages);
-        const filtered = allMessages.filter((m: any) => m.id !== id);
+        const allMessages: { id: string }[] = JSON.parse(messages);
+        const filtered = allMessages.filter((m) => m.id !== id);
         localStorage.setItem("messages", JSON.stringify(filtered));
       }
       return;
@@ -123,8 +123,8 @@ export const projectOperations = {
     if (!supabase) {
       const projects = localStorage.getItem("projects");
       if (projects) {
-        const allProjects = JSON.parse(projects);
-        const index = allProjects.findIndex((p: any) => p.id === id);
+        const allProjects: { id: string }[] = JSON.parse(projects);
+        const index = allProjects.findIndex((p) => p.id === id);
         if (index !== -1) {
           allProjects[index] = { ...allProjects[index], ...project };
           localStorage.setItem("projects", JSON.stringify(allProjects));
@@ -147,8 +147,8 @@ export const projectOperations = {
     if (!supabase) {
       const projects = localStorage.getItem("projects");
       if (projects) {
-        const allProjects = JSON.parse(projects);
-        const filtered = allProjects.filter((p: any) => p.id !== id);
+        const allProjects: { id: string }[] = JSON.parse(projects);
+        const filtered = allProjects.filter((p) => p.id !== id);
         localStorage.setItem("projects", JSON.stringify(filtered));
       }
       return;

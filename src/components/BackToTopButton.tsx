@@ -37,7 +37,6 @@ const BackToTopButton = () => {
             cursor: "pointer",
             fontSize: "18px",
             fontWeight: "700",
-            fontFamily: "Poppins, sans-serif",
             transition: "all 0.3s",
             boxShadow: "0 4px 12px rgba(36, 208, 198, 0.3)",
             width: "48px",

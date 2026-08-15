@@ -25,7 +25,7 @@ const Admin = () => {
   const [activeTab, setActiveTab] = useState<TabType>("messages");
   const [messages, setMessages] = useState<Message[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [editingProject, setEditingProject] = useState<Project | null>(null);
 
   const [formData, setFormData] = useState({
@@ -36,22 +36,7 @@ const Admin = () => {
     link: "",
   });
 
-  // Load messages
-  useEffect(() => {
-    if (activeTab === "messages") {
-      loadMessages();
-    }
-  }, [activeTab]);
-
-  // Load projects
-  useEffect(() => {
-    if (activeTab === "projects") {
-      loadProjects();
-    }
-  }, [activeTab]);
-
   const loadMessages = async () => {
-    setLoading(true);
     try {
       const data = await messageOperations.getAll();
       setMessages(data);
@@ -62,7 +47,6 @@ const Admin = () => {
   };
 
   const loadProjects = async () => {
-    setLoading(true);
     try {
       const data = await projectOperations.getAll();
       setProjects(data);
@@ -71,6 +55,24 @@ const Admin = () => {
     }
     setLoading(false);
   };
+
+  // Load messages
+  useEffect(() => {
+    if (activeTab === "messages") {
+      // setLoading(false) inside loadMessages runs after the await, not
+      // synchronously in this effect — the rule can't see past the await.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      loadMessages();
+    }
+  }, [activeTab]);
+
+  // Load projects
+  useEffect(() => {
+    if (activeTab === "projects") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      loadProjects();
+    }
+  }, [activeTab]);
 
   const deleteMessage = async (id: string) => {
     if (confirm("Delete this message?")) {
@@ -157,7 +159,7 @@ const Admin = () => {
         backgroundColor: "#0A1A2F",
         color: "#FFFFFF",
         padding: "40px 20px",
-        fontFamily: "Poppins, sans-serif",
+        fontFamily: "DM Sans, sans-serif",
       }}
     >
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
@@ -183,7 +185,10 @@ const Admin = () => {
           }}
         >
           <button
-            onClick={() => setActiveTab("messages")}
+            onClick={() => {
+              setActiveTab("messages");
+              setLoading(true);
+            }}
             style={{
               padding: "12px 24px",
               backgroundColor:
@@ -193,7 +198,7 @@ const Admin = () => {
               cursor: "pointer",
               fontSize: "16px",
               fontWeight: "600",
-              fontFamily: "Poppins, sans-serif",
+              fontFamily: "DM Sans, sans-serif",
               borderBottom:
                 activeTab === "messages" ? "3px solid #24D0C6" : "none",
               transition: "all 0.3s",
@@ -212,7 +217,10 @@ const Admin = () => {
             Messages
           </button>
           <button
-            onClick={() => setActiveTab("projects")}
+            onClick={() => {
+              setActiveTab("projects");
+              setLoading(true);
+            }}
             style={{
               padding: "12px 24px",
               backgroundColor:
@@ -222,7 +230,7 @@ const Admin = () => {
               cursor: "pointer",
               fontSize: "16px",
               fontWeight: "600",
-              fontFamily: "Poppins, sans-serif",
+              fontFamily: "DM Sans, sans-serif",
               borderBottom:
                 activeTab === "projects" ? "3px solid #24D0C6" : "none",
               transition: "all 0.3s",
@@ -375,7 +383,7 @@ const Admin = () => {
                       border: "1px solid rgba(36, 208, 198, 0.3)",
                       borderRadius: "4px",
                       color: "#FFFFFF",
-                      fontFamily: "Poppins, sans-serif",
+                      fontFamily: "DM Sans, sans-serif",
                       fontSize: "14px",
                       boxSizing: "border-box",
                     }}
@@ -405,7 +413,7 @@ const Admin = () => {
                       border: "1px solid rgba(36, 208, 198, 0.3)",
                       borderRadius: "4px",
                       color: "#FFFFFF",
-                      fontFamily: "Poppins, sans-serif",
+                      fontFamily: "DM Sans, sans-serif",
                       fontSize: "14px",
                       boxSizing: "border-box",
                       resize: "none",
@@ -437,7 +445,7 @@ const Admin = () => {
                       border: "1px solid rgba(36, 208, 198, 0.3)",
                       borderRadius: "4px",
                       color: "#FFFFFF",
-                      fontFamily: "Poppins, sans-serif",
+                      fontFamily: "DM Sans, sans-serif",
                       fontSize: "14px",
                       boxSizing: "border-box",
                     }}
@@ -468,7 +476,7 @@ const Admin = () => {
                       border: "1px solid rgba(36, 208, 198, 0.3)",
                       borderRadius: "4px",
                       color: "#FFFFFF",
-                      fontFamily: "Poppins, sans-serif",
+                      fontFamily: "DM Sans, sans-serif",
                       fontSize: "14px",
                       boxSizing: "border-box",
                     }}
@@ -499,7 +507,7 @@ const Admin = () => {
                       border: "1px solid rgba(36, 208, 198, 0.3)",
                       borderRadius: "4px",
                       color: "#FFFFFF",
-                      fontFamily: "Poppins, sans-serif",
+                      fontFamily: "DM Sans, sans-serif",
                       fontSize: "14px",
                       boxSizing: "border-box",
                     }}
@@ -518,7 +526,7 @@ const Admin = () => {
                       borderRadius: "4px",
                       cursor: "pointer",
                       fontWeight: "600",
-                      fontFamily: "Poppins, sans-serif",
+                      fontFamily: "DM Sans, sans-serif",
                       fontSize: "14px",
                       transition: "all 0.3s",
                       opacity: loading ? 0.6 : 1,
@@ -548,7 +556,7 @@ const Admin = () => {
                         borderRadius: "4px",
                         cursor: "pointer",
                         fontWeight: "600",
-                        fontFamily: "Poppins, sans-serif",
+                        fontFamily: "DM Sans, sans-serif",
                         fontSize: "14px",
                         transition: "all 0.3s",
                       }}

@@ -1,50 +1,19 @@
-import { useState, useEffect } from "react";
-import { FaLinkedin, FaInstagram, FaTwitter, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaTwitter, FaGithub, FaArrowRight } from "react-icons/fa";
 
 const Home = () => {
-  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
-  const [cycleCount, setCycleCount] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRoleIndex((prev) => {
-        const newIndex = (prev + 1) % 3;
-        if (newIndex === 0) {
-          setCycleCount((c) => c + 1);
-        }
-        return newIndex;
-      });
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   const handleExplore = () => {
     document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const roles = ["Web Developer", "Web Designer", "Creative"];
-
-  // Determine direction based on cycle count
-  // Even cycles: UP, UP, DOWN
-  // Odd cycles: DOWN, DOWN, UP
-  const isEvenCycle = cycleCount % 2 === 0;
-  const getAnimation = (roleIndex: number) => {
-    if (roleIndex === 2) {
-      // Last role always opposite of the first two
-      return isEvenCycle ? "fadeInDown" : "fadeInUp";
-    }
-    // First two roles
-    return isEvenCycle ? "fadeInUp" : "fadeInDown";
+  const handleContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section
       id="home"
       style={{
-        backgroundImage: "url('/Image/bg-2.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
+        backgroundColor: "#0A1A2F",
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
@@ -55,50 +24,9 @@ const Home = () => {
         position: "relative",
         overflow: "hidden",
       }}
-      onMouseMove={(e) => {
-        const section = e.currentTarget;
-        const rect = section.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width;
-        const y = (e.clientY - rect.top) / rect.height;
-        const moveX = (x - 0.5) * 10;
-        const moveY = (y - 0.5) * 10;
-        section.style.backgroundPosition = `calc(center + ${moveX}px) calc(center + ${moveY}px)`;
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundPosition = "center";
-      }}
     >
-      {/* Overlay - Removed */}
 
       <style>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes fadeInDown {
-          from {
-            opacity: 0;
-            transform: translateY(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes floating {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-15px);
-          }
-        }
         @keyframes scaleIn {
           from {
             opacity: 0;
@@ -117,193 +45,171 @@ const Home = () => {
             transform: translateY(-8px);
           }
         }
-        @keyframes glow {
+        @keyframes pulse {
           0%, 100% {
-            box-shadow: 0 0 5px rgba(36, 208, 198, 0.5);
+            opacity: 1;
           }
           50% {
-            box-shadow: 0 0 20px rgba(36, 208, 198, 0.8);
+            opacity: 0.35;
           }
-        }
-        .fade-in-up {
-          animation: fadeInUp 0.6s ease-out forwards;
-        }
-        .fade-in-down {
-          animation: fadeInDown 0.6s ease-out forwards;
-        }
-        .floating {
-          animation: floating 3s ease-in-out infinite;
         }
         .scale-in {
           animation: scaleIn 0.8s ease-out forwards;
         }
         @media (max-width: 768px) {
-          #home > div {
-            align-items: center !important;
-            text-align: center !important;
-            paddingLeft: "clamp(8px, 3vw, 30px)" !important;
-            paddingRight: "clamp(8px, 3vw, 30px)" !important;
+          .hero-content {
+            align-items: center;
+            text-align: center;
           }
-          #home h1 {
-            align-items: center !important;
-            text-align: center !important;
-            fontSize: "clamp(2rem, 6vw, 2.5rem)" !important;
-          }
-          #home h1 > span:first-child {
-            fontSize: "clamp(1.2rem, 4vw, 1.5rem)" !important;
-          }
-          #home > div > div:nth-of-type(1) {
-            align-items: center !important;
-            justify-content: center !important;
-            fontSize: "clamp(32px, 7vw, 48px)" !important;
-          }
-          #home > div > div:last-of-type {
-            justify-content: center !important;
-          }
-        }
-        @media (min-width: 769px) {
-          #home > div {
-            align-items: flex-start !important;
-            text-align: left !important;
-          }
-          #home h1 {
-            width: min(100%, 350px) !important;
-            align-items: center !important;
-            text-align: center !important;
-            margin: 0 auto 16px 0 !important;
-          }
-          #home > div > div:nth-of-type(1) {
-            width: min(100%, 350px) !important;
-            align-items: center !important;
-            justify-content: center !important;
-            margin: 0 auto 32px 0 !important;
-          }
-          #home > div > div:last-of-type {
-            width: min(100%, 350px) !important;
-            justify-content: center !important;
-            margin: 0 auto 0 0 !important;
+          .hero-cta-row {
+            justify-content: center;
           }
         }
       `}</style>
 
       <div
+        className="hero-content"
         style={{
-          maxWidth: "90rem",
+          maxWidth: "640px",
           width: "100%",
-          paddingLeft: "clamp(16px, 5vw, 200px)",
-          paddingRight: "clamp(16px, 5vw, 100px)",
-          textAlign: "center",
           position: "relative",
           zIndex: 10,
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: "flex-start",
+          textAlign: "left",
           margin: "0 auto",
         }}
       >
-        <h1
-          className="floating"
-          style={{
-            fontSize: "clamp(1.5rem, 5vw, 2.5rem)",
-            fontWeight: "500",
-            color: "#FFFFFF",
-            marginBottom: "16px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <span style={{ fontSize: "clamp(1rem, 3vw, 1.5rem)" }}>
-            Hello, I'm
-          </span>
-          <span style={{ color: "#FFFFFF" }}>Opeoluwa</span>
-        </h1>
         <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "16px",
-            marginBottom: "32px",
-            fontSize: "clamp(24px, 6vw, 48px)",
-            fontWeight: "700",
-            height: "auto",
-            minHeight: "60px",
-            position: "relative",
-            alignItems: "center",
-          }}
-        >
-          {currentRoleIndex === 0 && (
-            <span
-              key={`role-${currentRoleIndex}-${cycleCount}`}
-              style={{
-                color: "#24D0C6",
-                animation: `${getAnimation(0)} 0.6s ease-out forwards`,
-                whiteSpace: "nowrap",
-              }}
-            >
-              {roles[0]}
-            </span>
-          )}
-          {currentRoleIndex === 1 && (
-            <span
-              key={`role-${currentRoleIndex}-${cycleCount}`}
-              style={{
-                color: "#24D0C6",
-                animation: `${getAnimation(1)} 0.6s ease-out forwards`,
-                whiteSpace: "nowrap",
-              }}
-            >
-              {roles[1]}
-            </span>
-          )}
-          {currentRoleIndex === 2 && (
-            <span
-              key={`role-${currentRoleIndex}-${cycleCount}`}
-              style={{
-                color: "#24D0C6",
-                animation: `${getAnimation(2)} 0.6s ease-out forwards`,
-                whiteSpace: "nowrap",
-              }}
-            >
-              {roles[2]}
-            </span>
-          )}
-        </div>
-
-        <button
-          onClick={handleExplore}
           className="scale-in"
           style={{
-            padding: "clamp(8px, 2vw, 10px) clamp(40px, 8vw, 120px)",
-            backgroundColor: "#24D0C6",
-            color: "#000000",
-            fontWeight: "700",
-            border: "none",
-            borderRadius: "0",
-            cursor: "pointer",
-            fontSize: "clamp(13px, 2.5vw, 16px)",
-            transition: "all 0.3s",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            padding: "6px 14px",
+            borderRadius: "999px",
+            border: "1px solid rgba(36, 208, 198, 0.3)",
+            backgroundColor: "rgba(36, 208, 198, 0.08)",
             marginBottom: "24px",
-            width: "min(100%, 350px)",
-            maxWidth: "100%",
-            display: "block",
-            margin: "0 0 24px 0",
-            boxSizing: "border-box",
-            textAlign: "center",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "#ffffff";
-            e.currentTarget.style.color = "#000000";
-            e.currentTarget.style.animation = "bounce 0.6s ease-in-out";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "#24D0C6";
-            e.currentTarget.style.color = "#000000";
-            e.currentTarget.style.animation = "none";
           }}
         >
-          SEE MY WORK
-        </button>
+          <span
+            style={{
+              width: "7px",
+              height: "7px",
+              borderRadius: "50%",
+              backgroundColor: "#24D0C6",
+              animation: "pulse 2s ease-in-out infinite",
+              flexShrink: 0,
+            }}
+          />
+          <span
+            className="text-xs font-heading"
+            style={{
+              color: "#24D0C6",
+              fontWeight: 700,
+              letterSpacing: "0.04em",
+              textTransform: "uppercase",
+            }}
+          >
+            Available for new projects
+          </span>
+        </div>
+
+        <h1
+          className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+          style={{
+            color: "#FFFFFF",
+            lineHeight: 1.15,
+            marginBottom: "20px",
+          }}
+        >
+          I turn ideas into fast, modern websites{" "}
+          <span style={{ color: "#24D0C6" }}>built to perform.</span>
+        </h1>
+
+        <p
+          className="scale-in text-sm sm:text-base"
+          style={{
+            color: "rgba(255, 255, 255, 0.7)",
+            lineHeight: 1.6,
+            maxWidth: "480px",
+            marginBottom: "28px",
+          }}
+        >
+          I design and build fast, accessible websites — from portfolios to
+          e-commerce to dashboards — with clean code and real attention to
+          detail.
+        </p>
+
+        <div
+          className="hero-cta-row"
+          style={{
+            display: "flex",
+            gap: "14px",
+            flexWrap: "wrap",
+            marginBottom: "28px",
+          }}
+        >
+          <button
+            onClick={handleContact}
+            className="scale-in text-sm sm:text-base font-bold"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "clamp(8px, 2vw, 10px) clamp(28px, 6vw, 48px)",
+              backgroundColor: "#24D0C6",
+              color: "#000000",
+              border: "none",
+              borderRadius: "6px",
+              cursor: "pointer",
+              transition: "all 0.3s",
+              boxSizing: "border-box",
+              textAlign: "center",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#ffffff";
+              e.currentTarget.style.color = "#000000";
+              e.currentTarget.style.animation = "bounce 0.6s ease-in-out";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "#24D0C6";
+              e.currentTarget.style.color = "#000000";
+              e.currentTarget.style.animation = "none";
+            }}
+          >
+            LET'S TALK
+            <FaArrowRight size={13} />
+          </button>
+
+          <button
+            onClick={handleExplore}
+            className="scale-in text-sm sm:text-base font-bold"
+            style={{
+              padding: "clamp(8px, 2vw, 10px) clamp(28px, 6vw, 48px)",
+              backgroundColor: "transparent",
+              color: "#FFFFFF",
+              border: "1px solid rgba(255, 255, 255, 0.3)",
+              borderRadius: "6px",
+              cursor: "pointer",
+              transition: "all 0.3s",
+              boxSizing: "border-box",
+              textAlign: "center",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = "#24D0C6";
+              e.currentTarget.style.color = "#24D0C6";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.3)";
+              e.currentTarget.style.color = "#FFFFFF";
+            }}
+          >
+            SEE MY WORK
+          </button>
+        </div>
 
         {/* Social Icons */}
         <div
@@ -312,7 +218,7 @@ const Home = () => {
             display: "flex",
             gap: "20px",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "flex-start",
             animationDelay: "0.2s",
             flexWrap: "wrap",
           }}

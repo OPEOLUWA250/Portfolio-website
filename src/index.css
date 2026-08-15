@@ -1,8 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap");
 @import "tailwindcss";
+@config "../tailwind.config.js";
 
 :root {
-  font-family: "Poppins", sans-serif;
+  font-family: "DM Sans", sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
@@ -37,17 +38,4 @@ html {
 /* Image optimization - prevent layout shifts */
 img {
   display: block;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  :root {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  :root {
-    font-size: 13px;
-  }
 }

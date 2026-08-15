@@ -91,21 +91,18 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen bg-primary flex items-center justify-center scale-in"
+      className="min-h-screen flex items-center justify-center scale-in"
       style={{
+        backgroundColor: "#0D2238",
         paddingTop: "clamp(80px, 15vw, 120px)",
         paddingBottom: "clamp(30px, 8vw, 40px)",
       }}
     >
       <div
         className="max-w-4xl mx-auto px-6 w-full"
-        style={{
-          marginLeft: "clamp(10px, 3vw, 20px)",
-          marginRight: "clamp(10px, 3vw, 20px)",
-        }}
       >
         <h2
-          className="text-2xl sm:text-3xl md:text-4xl font-bold text-center"
+          className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-center"
           style={{ color: "#24D0C6", marginBottom: "clamp(24px, 5vw, 48px)" }}
         >
           Get In Touch
@@ -160,20 +157,19 @@ const Contact = () => {
                   }}
                 />
                 <h3
+                  className="font-heading text-sm sm:text-base font-bold"
                   style={{
                     color: "#24D0C6",
-                    fontWeight: "700",
                     marginBottom: "8px",
-                    fontSize: "clamp(14px, 3vw, 16px)",
                   }}
                 >
                   {info.label}
                 </h3>
                 <p
+                  className="text-xs sm:text-sm"
                   style={{
                     color: "#FFFFFF",
                     textAlign: "center",
-                    fontSize: "clamp(12px, 2vw, 14px)",
                   }}
                 >
                   {info.value}
@@ -208,7 +204,7 @@ const Contact = () => {
           }}
         >
           <h3
-            className="text-lg sm:text-xl md:text-2xl font-bold text-center"
+            className="font-heading text-lg sm:text-xl md:text-2xl font-bold text-center"
             style={{ color: "#24D0C6", marginBottom: "clamp(16px, 4vw, 24px)" }}
           >
             Send Me a Message
@@ -231,7 +227,6 @@ const Contact = () => {
                   borderRadius: "4px",
                   color: "#FFFFFF",
                   fontSize: "14px",
-                  fontFamily: "Poppins, sans-serif",
                   transition: "all 0.3s",
                   boxSizing: "border-box",
                 }}
@@ -263,7 +258,6 @@ const Contact = () => {
                   borderRadius: "4px",
                   color: "#FFFFFF",
                   fontSize: "14px",
-                  fontFamily: "Poppins, sans-serif",
                   transition: "all 0.3s",
                   boxSizing: "border-box",
                 }}
@@ -295,7 +289,6 @@ const Contact = () => {
                   borderRadius: "4px",
                   color: "#FFFFFF",
                   fontSize: "14px",
-                  fontFamily: "Poppins, sans-serif",
                   transition: "all 0.3s",
                   boxSizing: "border-box",
                   resize: "none",

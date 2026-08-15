@@ -25,18 +25,16 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="min-h-screen bg-primary flex items-center justify-center scale-in"
-      style={{ paddingTop: "clamp(80px, 15vw, 120px)", paddingBottom: "40px" }}
+      className="min-h-screen flex items-center justify-center scale-in"
+      style={{
+        backgroundColor: "#0A1A2F",
+        paddingTop: "clamp(80px, 15vw, 120px)",
+        paddingBottom: "40px",
+      }}
     >
-      <div
-        className="max-w-6xl mx-auto px-6 w-full"
-        style={{
-          marginLeft: "clamp(10px, 3vw, 20px)",
-          marginRight: "clamp(10px, 3vw, 20px)",
-        }}
-      >
+      <div className="max-w-6xl mx-auto px-6 w-full">
         <h2
-          className="text-2xl sm:text-3xl md:text-4xl font-bold text-center"
+          className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-center"
           style={{ color: "#24D0C6", marginBottom: "clamp(24px, 5vw, 48px)" }}
         >
           My Services
@@ -55,48 +53,59 @@ const Services = () => {
               <div
                 key={service.title}
                 style={{
-                  padding: "clamp(16px, 4vw, 24px)",
-                  borderRadius: "8px",
-                  transition: "all 0.3s",
+                  padding: "clamp(20px, 4vw, 28px)",
+                  borderRadius: "16px",
+                  transition: "transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease",
                   cursor: "pointer",
-                  backgroundColor: "rgba(36, 208, 198, 0.05)",
-                  border: "1px solid rgba(36, 208, 198, 0.2)",
+                  background:
+                    "linear-gradient(160deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015))",
+                  border: "1px solid rgba(182, 211, 209, 0.14)",
+                  boxShadow: "0 1px 2px rgba(0,0,0,0.3)",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "scale(1.05)";
+                  e.currentTarget.style.transform = "translateY(-6px)";
                   e.currentTarget.style.boxShadow =
-                    "0 0 30px rgba(36, 208, 198, 0.4)";
-                  e.currentTarget.style.backgroundColor =
-                    "rgba(36, 208, 198, 0.1)";
-                  e.currentTarget.style.borderColor = "rgba(36, 208, 198, 0.5)";
+                    "0 16px 32px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(36, 208, 198, 0.15)";
+                  e.currentTarget.style.borderColor = "rgba(36, 208, 198, 0.4)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
-                  e.currentTarget.style.boxShadow = "none";
-                  e.currentTarget.style.backgroundColor =
-                    "rgba(36, 208, 198, 0.05)";
-                  e.currentTarget.style.borderColor = "rgba(36, 208, 198, 0.2)";
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 1px 2px rgba(0,0,0,0.3)";
+                  e.currentTarget.style.borderColor = "rgba(182, 211, 209, 0.14)";
                 }}
               >
-                <Icon
+                <div
                   style={{
-                    fontSize: "clamp(36px, 8vw, 48px)",
-                    color: "#24D0C6",
-                    marginBottom: "clamp(12px, 3vw, 16px)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "clamp(52px, 10vw, 60px)",
+                    height: "clamp(52px, 10vw, 60px)",
+                    borderRadius: "50%",
+                    backgroundColor: "rgba(36, 208, 198, 0.1)",
+                    border: "1px solid rgba(36, 208, 198, 0.2)",
+                    marginBottom: "clamp(16px, 4vw, 20px)",
                   }}
-                />
+                >
+                  <Icon
+                    style={{
+                      fontSize: "clamp(22px, 4vw, 26px)",
+                      color: "#24D0C6",
+                    }}
+                  />
+                </div>
                 <h3
-                  className="text-lg sm:text-xl md:text-2xl font-bold"
+                  className="font-heading text-lg sm:text-xl md:text-2xl font-bold"
                   style={{
-                    color: "#24D0C6",
+                    color: "#FFFFFF",
                     marginBottom: "clamp(8px, 2vw, 12px)",
                   }}
                 >
                   {service.title}
                 </h3>
                 <p
-                  className="text-sm sm:text-base text-light leading-relaxed"
-                  style={{ color: "#FFFFFF" }}
+                  className="text-sm sm:text-base leading-relaxed"
+                  style={{ color: "rgba(255, 255, 255, 0.65)" }}
                 >
                   {service.description}
                 </p>

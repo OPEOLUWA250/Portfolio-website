@@ -9,6 +9,10 @@ export default {
         light: "#FFFFFF",
         dark: "#000000",
       },
+      fontFamily: {
+        sans: ['"DM Sans"', "sans-serif"],
+        heading: ['"Plus Jakarta Sans"', "sans-serif"],
+      },
     },
   },
   plugins: [],

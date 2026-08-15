@@ -4,20 +4,16 @@ const About = () => {
       id="about"
       className="bg-primary flex items-center justify-center scale-in"
       style={{
-        paddingTop: "clamp(70px, 12vw, 100px)",
-        paddingBottom: "clamp(2px, 2vw, 10px)",
+        paddingTop: "clamp(80px, 15vw, 120px)",
+        paddingBottom: "clamp(60px, 10vw, 90px)",
         minHeight: "auto",
       }}
     >
       <div
         className="max-w-4xl mx-auto px-6"
-        style={{
-          marginLeft: "clamp(10px, 3vw, 20px)",
-          marginRight: "clamp(10px, 3vw, 20px)",
-        }}
       >
         <h2
-          className="text-2xl sm:text-3xl md:text-4xl font-bold text-center"
+          className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-center"
           style={{ color: "#24D0C6", marginBottom: "clamp(24px, 5vw, 48px)" }}
         >
           About Me
@@ -27,14 +23,14 @@ const About = () => {
           style={{ marginBottom: "clamp(32px, 8vw, 48px)" }}
         >
           <h3
-            className="text-lg sm:text-xl md:text-2xl font-bold text-light"
+            className="font-heading text-lg sm:text-xl md:text-2xl font-bold text-light"
             style={{ marginBottom: "clamp(20px, 5vw, 32px)" }}
           >
             Hey There! I am <span style={{ color: "#24D0C6" }}>dev</span>
             opeoluwa
           </h3>
           <p
-            className="text-sm sm:text-base md:text-lg text-light text-center leading-relaxed"
+            className="text-sm sm:text-base text-light text-center leading-relaxed"
             style={{ marginBottom: "clamp(16px, 4vw, 24px)" }}
           >
             I create visually compelling digital experiences using{" "}
@@ -47,7 +43,7 @@ const About = () => {
             , I handle every detail with care.
           </p>
           <p
-            className="text-sm sm:text-base md:text-lg text-light leading-relaxed"
+            className="text-sm sm:text-base text-light leading-relaxed"
             style={{ marginBottom: "clamp(32px, 8vw, 48px)" }}
           >
             I specialize in{" "}
@@ -72,7 +68,7 @@ const About = () => {
               color: "#000000",
               fontWeight: "700",
               border: "none",
-              borderRadius: "0",
+              borderRadius: "6px",
               cursor: "pointer",
               fontSize: "clamp(13px, 2vw, 16px)",
               transition: "all 0.3s",
