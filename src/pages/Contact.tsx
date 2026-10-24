@@ -227,6 +227,7 @@ const Contact = () => {
                   borderRadius: "4px",
                   color: "#FFFFFF",
                   fontSize: "14px",
+                  outline: "none",
                   transition: "all 0.3s",
                   boxSizing: "border-box",
                 }}
@@ -258,6 +259,7 @@ const Contact = () => {
                   borderRadius: "4px",
                   color: "#FFFFFF",
                   fontSize: "14px",
+                  outline: "none",
                   transition: "all 0.3s",
                   boxSizing: "border-box",
                 }}
@@ -289,6 +291,7 @@ const Contact = () => {
                   borderRadius: "4px",
                   color: "#FFFFFF",
                   fontSize: "14px",
+                  outline: "none",
                   transition: "all 0.3s",
                   boxSizing: "border-box",
                   resize: "none",

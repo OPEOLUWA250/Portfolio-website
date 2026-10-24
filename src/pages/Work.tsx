@@ -22,6 +22,14 @@ const Work = () => {
     tech: string;
   }[] = [
     {
+      title: "Toymak Fashion",
+      description:
+        "A UK e-commerce store for shapewear, waist trainers, and everyday fashion, with a filterable product catalogue, wishlist and cart, and multi-currency pricing.",
+      image: "/Image/work/toymak.png",
+      link: "https://www.toymakfashion.com/",
+      tech: "E-commerce",
+    },
+    {
       title: "Rep Up",
       description:
         "A beginner gym coach that tells you what to lift today, with animated form demos, guided workouts, progress tracking, and Nigerian meal portion guides — all offline-first.",
@@ -36,15 +44,6 @@ const Work = () => {
       image: "/Image/work/campusguide.png",
       link: "https://campusguide.tech/",
       github: "https://github.com/OPEOLUWA250/Campus-Guide/tree/main",
-      tech: "Next.Js, Typescript",
-    },
-    {
-      title: "Systome",
-      description:
-        "Turns chaotic manual workflows into seamless digital systems with operational clarity, structured workflows, and intelligent automations for scalable businesses.",
-      image: "/Image/work/systome.png",
-      link: "https://systome-co.vercel.app/",
-      github: "https://github.com/OPEOLUWA250/systome.co",
       tech: "Next.Js, Typescript",
     },
     {
