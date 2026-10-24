@@ -27,7 +27,8 @@ const Work = () => {
         "A UK e-commerce store for shapewear, waist trainers, and everyday fashion, with a filterable product catalogue, wishlist and cart, and multi-currency pricing.",
       image: "/Image/work/toymak.png",
       link: "https://www.toymakfashion.com/",
-      tech: "E-commerce",
+      github: "https://github.com/OPEOLUWA250/toymak-fashion",
+      tech: "Next.Js, Typescript",
     },
     {
       title: "Rep Up",
@@ -35,6 +36,7 @@ const Work = () => {
         "A beginner gym coach that tells you what to lift today, with animated form demos, guided workouts, progress tracking, and Nigerian meal portion guides — all offline-first.",
       image: "/Image/work/repup.png",
       link: "https://rep-up-nine.vercel.app/",
+      github: "https://github.com/OPEOLUWA250/Rep-up",
       tech: "React, PWA",
     },
     {
