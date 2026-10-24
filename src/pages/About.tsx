@@ -10,7 +10,7 @@ const About = () => {
       }}
     >
       <div
-        className="max-w-4xl mx-auto px-6"
+        className="max-w-4xl mx-auto px-4 sm:px-6"
       >
         <h2
           className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-center"
@@ -30,7 +30,7 @@ const About = () => {
             opeoluwa
           </h3>
           <p
-            className="text-sm sm:text-base text-light text-center leading-relaxed"
+            className="text-sm sm:text-base text-light text-justify leading-relaxed"
             style={{ marginBottom: "clamp(16px, 4vw, 24px)" }}
           >
             I create visually compelling digital experiences using{" "}
@@ -43,7 +43,7 @@ const About = () => {
             , I handle every detail with care.
           </p>
           <p
-            className="text-sm sm:text-base text-light leading-relaxed"
+            className="text-sm sm:text-base text-light text-justify leading-relaxed"
             style={{ marginBottom: "clamp(32px, 8vw, 48px)" }}
           >
             I specialize in{" "}

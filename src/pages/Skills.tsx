@@ -13,12 +13,14 @@ import {
   SiFirebase,
   SiPostgresql,
   SiCloudflare,
+  SiExpo,
 } from "react-icons/si";
 
 const Skills = () => {
   const skills = [
-    { name: "React.js", icon: SiReact, color: "#61DAFB" },
+    { name: "React/React-Native", icon: SiReact, color: "#61DAFB" },
     { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+    { name: "Expo", icon: SiExpo, color: "#FFFFFF" },
     { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
     { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
     { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
@@ -45,7 +47,7 @@ const Skills = () => {
       }}
     >
       <div
-        className="max-w-5xl mx-auto px-6 w-full"
+        className="max-w-5xl mx-auto px-4 sm:px-6 w-full"
       >
         <h2
           className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-center"

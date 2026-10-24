@@ -99,7 +99,7 @@ const Contact = () => {
       }}
     >
       <div
-        className="max-w-4xl mx-auto px-6 w-full"
+        className="max-w-4xl mx-auto px-4 sm:px-6 w-full"
       >
         <h2
           className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-center"

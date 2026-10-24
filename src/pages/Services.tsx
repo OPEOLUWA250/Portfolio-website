@@ -1,7 +1,13 @@
-import { FaCode, FaPalette, FaGlobe } from "react-icons/fa";
+import { FaCode, FaPalette, FaGlobe, FaMobileAlt } from "react-icons/fa";
 
 const Services = () => {
   const services = [
+    {
+      title: "Mobile App Development",
+      description:
+        "I build cross-platform mobile apps for iOS and Android using React Native and Expo, with smooth native feel, offline support, and polished interfaces. From idea to app store, I ship apps people enjoy using every day.",
+      icon: FaMobileAlt,
+    },
     {
       title: "Web Development",
       description:
@@ -32,7 +38,7 @@ const Services = () => {
         paddingBottom: "40px",
       }}
     >
-      <div className="max-w-6xl mx-auto px-6 w-full">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
         <h2
           className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-center"
           style={{ color: "#24D0C6", marginBottom: "clamp(24px, 5vw, 48px)" }}
@@ -43,7 +49,7 @@ const Services = () => {
           style={{
             display: "grid",
             gridTemplateColumns:
-              "repeat(auto-fit, minmax(clamp(250px, 80vw, 300px), 1fr))",
+              "repeat(auto-fit, minmax(clamp(250px, 80vw, 420px), 1fr))",
             gap: "clamp(16px, 4vw, 24px)",
           }}
         >

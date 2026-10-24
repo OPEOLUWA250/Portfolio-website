@@ -211,7 +211,7 @@ const Work = () => {
       `}</style>
 
       <div
-        className="max-w-6xl mx-auto px-6 w-full"
+        className="max-w-6xl mx-auto px-4 sm:px-6 w-full"
       >
         <div
           style={{
