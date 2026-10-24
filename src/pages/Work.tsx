@@ -13,7 +13,22 @@ const Work = () => {
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(true);
 
-  const projects = [
+  const projects: {
+    title: string;
+    description: string;
+    image: string;
+    link: string;
+    github?: string;
+    tech: string;
+  }[] = [
+    {
+      title: "Rep Up",
+      description:
+        "A beginner gym coach that tells you what to lift today, with animated form demos, guided workouts, progress tracking, and Nigerian meal portion guides — all offline-first.",
+      image: "/Image/work/repup.png",
+      link: "https://rep-up-nine.vercel.app/",
+      tech: "React, PWA",
+    },
     {
       title: "CampusGuide",
       description:
@@ -345,6 +360,7 @@ const Work = () => {
                     {project.title}
                     <FaArrowUpRightFromSquare size={12} style={{ color: "#24D0C6", flexShrink: 0 }} />
                   </a>
+                  {project.github && (
                   <a
                     href={project.github}
                     target="_blank"
@@ -365,6 +381,7 @@ const Work = () => {
                   >
                     <FaGithub size={12} />
                   </a>
+                  )}
                 </div>
 
                 <p
